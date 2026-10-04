@@ -344,6 +344,22 @@ User
 
 ---
 
+
+## 📸 Screenshots
+
+### Login
+
+![TaskFlow Login](screenshots/login.png)
+
+### User Dashboard
+
+![TaskFlow Dashboard](screenshots/user-dashboard.png)
+
+### Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+
 ## 🎯 Portfolio Description
 
 **TaskFlow is a full-stack Flask task management application built with Python, Flask, SQLAlchemy, SQLite, Jinja2, and Flask-WTF. The project demonstrates practical backend development including authentication, role-based authorization, CRUD operations, database migrations, user/task relationships, search, filtering, pagination, CSRF protection, secure password hashing, and admin user management.**
