@@ -344,7 +344,6 @@ User
 
 ---
 
-
 ## 📸 Screenshots
 
 ### Login
@@ -358,7 +357,6 @@ User
 ### Admin Dashboard
 
 ![Admin Dashboard](screenshots/admin-dashboard.png)
-
 
 ## 🎯 Portfolio Description
 
