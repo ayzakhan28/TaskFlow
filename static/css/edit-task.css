@@ -1,0 +1,146 @@
+/* =========================
+   EDIT TASK PAGE
+========================= */
+
+.edit-task-container {
+    max-width: 650px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.edit-task-container h2 {
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 30px;
+}
+
+
+/* Form */
+
+.edit-task-form {
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Labels */
+
+.edit-task-form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* Inputs */
+
+.edit-task-form input,
+.edit-task-form textarea,
+.edit-task-form select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 13px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* Focus */
+
+.edit-task-form input:focus,
+.edit-task-form textarea:focus,
+.edit-task-form select:focus {
+    border-color: #4f46e5;
+
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.10);
+}
+
+
+/* Description */
+
+.edit-task-form textarea {
+    min-height: 130px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* Update Button */
+
+.edit-task-form button {
+    width: 100%;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #4f46e5;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.edit-task-form button:hover {
+    background: #3730a3;
+
+    transform: translateY(-1px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .edit-task-container {
+        margin: 30px auto;
+    }
+
+    .edit-task-form {
+        padding: 22px;
+    }
+
+    .edit-task-container h2 {
+        font-size: 25px;
+    }
+
+}

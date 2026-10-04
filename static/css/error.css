@@ -1,0 +1,117 @@
+/* =========================================
+   TASKFLOW ERROR PAGE
+========================================= */
+
+.error-page {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+}
+
+.error-card {
+    width: 100%;
+    max-width: 550px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    padding: 55px 40px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+
+/* 404 Number */
+
+.error-number {
+    font-size: 90px;
+    font-weight: 800;
+
+    line-height: 1;
+
+    color: #2563eb;
+
+    margin-bottom: 20px;
+}
+
+
+/* Heading */
+
+.error-card h1 {
+    margin: 0 0 12px;
+
+    color: #0f172a;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+/* Description */
+
+.error-card p {
+    margin: 0 auto 30px;
+
+    color: #64748b;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* Back Home Button */
+
+.back-home-btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    padding: 12px 22px;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.back-home-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .error-card {
+        padding: 45px 25px;
+    }
+
+    .error-number {
+        font-size: 70px;
+    }
+
+    .error-card h1 {
+        font-size: 25px;
+    }
+
+    .error-card p {
+        font-size: 14px;
+    }
+
+}

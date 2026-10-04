@@ -1,0 +1,146 @@
+/* =========================
+   CREATE TASK PAGE
+========================= */
+
+.create-task-container {
+    max-width: 650px;
+    margin: 45px auto;
+    padding: 0 20px;
+}
+
+.create-task-container h1 {
+    margin-bottom: 25px;
+    color: #222;
+    font-size: 30px;
+}
+
+
+/* Form */
+
+.create-task-form {
+    background: white;
+    padding: 30px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Labels */
+
+.create-task-form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #374151;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* Inputs */
+
+.create-task-form input,
+.create-task-form textarea,
+.create-task-form select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 11px 13px;
+
+    margin-bottom: 20px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+
+/* Focus */
+
+.create-task-form input:focus,
+.create-task-form textarea:focus,
+.create-task-form select:focus {
+    border-color: #4f46e5;
+
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.10);
+}
+
+
+/* Description */
+
+.create-task-form textarea {
+    min-height: 130px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* Button */
+
+.create-task-form button {
+    width: 100%;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.create-task-form button:hover {
+    background: #3730a3;
+
+    transform: translateY(-1px);
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .create-task-container {
+        margin: 30px auto;
+    }
+
+    .create-task-form {
+        padding: 22px;
+    }
+
+    .create-task-container h1 {
+        font-size: 25px;
+    }
+
+}

@@ -1,0 +1,1075 @@
+/* =========================================
+   ADMIN DASHBOARD MAIN
+========================================= */
+
+.admin-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   ADMIN WELCOME HEADER
+========================================= */
+
+.admin-welcome {
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    color: white;
+
+    padding: 35px;
+
+    border-radius: 16px;
+
+    margin-bottom: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.20);
+}
+
+.admin-label {
+    margin: 0 0 8px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    opacity: 0.85;
+}
+
+.admin-welcome h1 {
+    margin: 0;
+
+    font-size: 32px;
+}
+
+.welcome-text {
+    margin: 10px 0 0;
+
+    font-size: 15px;
+
+    opacity: 0.9;
+}
+
+
+/* Admin Icon */
+
+.admin-icon {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.18);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Card */
+
+.stat-card {
+    background-color: white;
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Icon */
+
+.stat-icon {
+    width: 55px;
+    height: 55px;
+
+    border-radius: 12px;
+
+    background-color: #eff6ff;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+}
+
+
+/* Text */
+
+.stat-card p {
+    margin: 0 0 5px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+.stat-card h2 {
+    margin: 0;
+
+    color: #2563eb;
+
+    font-size: 28px;
+}
+
+
+/* =========================================
+   MANAGE USERS CARD
+========================================= */
+
+.users-card {
+    background-color: white;
+
+    padding: 28px;
+
+    border-radius: 16px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================
+   MANAGE USERS HEADING
+========================================= */
+
+.section-header {
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    margin: 0;
+
+    color: #1f2937;
+
+    font-size: 23px;
+}
+
+.section-header p {
+    margin: 7px 0 0;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   SEARCH FORM
+========================================= */
+
+.search-form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Search Input Container */
+
+.search-box {
+    width: 100%;
+    max-width: 450px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: #f9fafb;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    padding: 0 14px;
+
+    transition: 0.2s;
+}
+
+.search-box:focus-within {
+    border-color: #2563eb;
+
+    background-color: white;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* Search Icon */
+
+.search-box span {
+    font-size: 15px;
+}
+
+
+/* Search Input */
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    padding: 12px 0;
+
+    font-size: 14px;
+
+    color: #374151;
+}
+
+.search-box input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* Search Button */
+
+.search-btn {
+    border: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    padding: 12px 23px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.search-btn:hover {
+    background-color: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.users-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 850px;
+}
+
+
+/* Table Header */
+
+.users-table th {
+    background-color: #eff6ff;
+
+    color: #1e3a8a;
+
+    padding: 15px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    border-bottom: 2px solid #dbeafe;
+}
+
+
+/* Table Data */
+
+.users-table td {
+    padding: 15px;
+
+    border-bottom: 1px solid #eef0f3;
+
+    color: #374151;
+
+    font-size: 14px;
+}
+
+
+/* Hover */
+
+.users-table tbody tr:hover {
+    background-color: #f8fbff;
+}
+
+
+/* =========================================
+   USER INFORMATION
+========================================= */
+
+.user-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    background-color: #dbeafe;
+
+    color: #1d4ed8;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+}
+
+.user-info strong {
+    color: #1f2937;
+}
+
+.user-id {
+    color: #6b7280;
+}
+
+.email-text {
+    color: #6b7280;
+}
+
+
+/* =========================================
+   ROLE
+========================================= */
+
+.role-badge {
+    display: inline-block;
+
+    padding: 5px 11px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.admin-badge {
+    background-color: #ede9fe;
+
+    color: #6d28d9;
+}
+
+.user-badge {
+    background-color: #f3f4f6;
+
+    color: #4b5563;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+}
+
+.active-badge {
+    background-color: #dcfce7;
+
+    color: #15803d;
+}
+
+.active-badge .status-dot {
+    background-color: #16a34a;
+}
+
+.inactive-badge {
+    background-color: #fee2e2;
+
+    color: #b91c1c;
+}
+
+.inactive-badge .status-dot {
+    background-color: #dc2626;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.action-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* Edit */
+
+.edit-btn {
+    text-decoration: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    padding: 7px 13px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.edit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* Deactivate */
+
+.deactivate-btn {
+    border: none;
+
+    background-color: #fee2e2;
+
+    color: #b91c1c;
+
+    padding: 7px 11px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.deactivate-btn:hover {
+    background-color: #fecaca;
+}
+
+
+/* Activate */
+
+.activate-btn {
+    border: none;
+
+    background-color: #dcfce7;
+
+    color: #15803d;
+
+    padding: 7px 11px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.activate-btn:hover {
+    background-color: #bbf7d0;
+}
+
+
+/* =========================================
+   NO USERS
+========================================= */
+
+.no-users {
+    text-align: center;
+
+    padding: 35px !important;
+
+    color: #6b7280 !important;
+}
+
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.page-btn {
+    text-decoration: none;
+
+    background-color: #2563eb;
+
+    color: white;
+
+    padding: 9px 17px;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.page-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.page-number {
+    color: #4b5563;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .admin-welcome {
+        padding: 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .admin-welcome h1 {
+        font-size: 26px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .users-card {
+        padding: 20px;
+    }
+
+    .search-form {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+
+    .search-btn {
+        padding: 12px;
+    }
+
+}
+
+/* =================================
+   EDIT USER PAGE
+================================= */
+
+.edit-user-page {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff 0%,
+        #ffffff 55%,
+        #dbeafe 100%
+    );
+}
+
+
+.edit-user-card {
+    width: 100%;
+    max-width: 500px;
+
+    background: #ffffff;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    border: 1px solid #dbeafe;
+
+    box-shadow:
+        0 20px 45px rgba(37, 99, 235, 0.12);
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.edit-user-header {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.edit-user-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+
+.edit-user-header h1 {
+    margin: 0 0 10px;
+
+    color: #0f172a;
+
+    font-size: 30px;
+}
+
+
+.edit-user-header p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =================================
+   FORM
+================================= */
+
+.edit-user-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+.admin-form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.admin-form-group label {
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.admin-form-group input,
+.admin-form-group select {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #0f172a;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+
+.admin-form-group input:focus,
+.admin-form-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px #dbeafe;
+}
+
+
+/* =================================
+   ACTION BUTTONS
+================================= */
+
+.edit-user-actions {
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 5px;
+}
+
+
+.cancel-btn,
+.update-user-btn {
+    flex: 1;
+
+    padding: 13px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.cancel-btn {
+    text-decoration: none;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+.cancel-btn:hover {
+    background: #e2e8f0;
+
+    color: #334155;
+}
+
+
+.update-user-btn {
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+}
+
+
+.update-user-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 500px) {
+
+    .edit-user-page {
+        padding: 40px 15px;
+    }
+
+
+    .edit-user-card {
+        padding: 30px 22px;
+    }
+
+
+    .edit-user-header h1 {
+        font-size: 26px;
+    }
+
+
+    .edit-user-actions {
+        flex-direction: column;
+    }
+
+}
+
+.delete-user-btn {
+    padding: 8px 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.delete-user-btn:hover {
+    background: #b91c1c;
+
+    transform: translateY(-1px);
+}
+
+/* =================================
+   ADMIN ACTION BUTTONS
+================================= */
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.action-buttons form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-shrink: 0;
+}
+
+
+/* Common button size */
+
+.action-buttons a,
+.action-buttons button {
+    width: 90px;
+    height: 36px;
+
+    box-sizing: border-box;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =================================
+   EDIT
+================================= */
+
+.action-buttons .edit-btn {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.action-buttons .edit-btn:hover {
+    background: #dbeafe;
+    transform: translateY(-1px);
+}
+
+
+/* =================================
+   DEACTIVATE
+================================= */
+
+.action-buttons .deactivate-btn {
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1px solid #fed7aa;
+}
+
+.action-buttons .deactivate-btn:hover {
+    background: #ffedd5;
+    transform: translateY(-1px);
+}
+
+
+/* =================================
+   ACTIVATE
+================================= */
+
+.action-buttons .activate-btn {
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.action-buttons .activate-btn:hover {
+    background: #dcfce7;
+    transform: translateY(-1px);
+}
+
+
+/* =================================
+   DELETE
+================================= */
+
+.action-buttons .delete-user-btn {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.action-buttons .delete-user-btn:hover {
+    background: #fee2e2;
+    transform: translateY(-1px);
+}
+
+
+/* =================================
+   ACTION COLUMN
+================================= */
+
+.users-table th:last-child,
+.users-table td:last-child {
+    min-width: 310px;
+    width: 310px;
+}

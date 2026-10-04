@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    <title>
+        {% block title %}
+        TaskFlow
+        {% endblock %}
+    </title>
+
+    {% block head %}
+    {% endblock %}
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- Logo -->
+
+            <a
+                href="{{ url_for('home') }}"
+                class="logo"
+            >
+                Task<span>Flow</span>
+            </a>
+
+
+            <!-- Center Navigation -->
+
+            <div class="nav-links">
+                
+
+         
+    {% if session.get("user_id") %}
+
+        {% if session.get("user_role") == "admin" %}
+
+            <a href="{{ url_for('admin.dashboard') }}">
+                Admin Panel
+            </a>
+
+        {% else %}
+
+            <a href="{{ url_for('user.dashboard') }}">
+                Dashboard
+            </a>
+
+        {% endif %}
+
+    {% endif %}
+
+</div>
+
+            <!-- Right Buttons -->
+
+            <div class="nav-buttons">
+
+
+                {% if session.get("user_id") %}
+
+                    <!-- Logout -->
+
+                    <a
+                        href="{{ url_for('auth.logout') }}"
+                        class="nav-btn logout-btn"
+                    >
+                        Logout
+                    </a>
+
+
+                {% else %}
+
+
+                    <!-- Login -->
+
+                    <a
+                        href="{{ url_for('auth.login') }}"
+                        class="nav-btn login-btn"
+                    >
+                        Login
+                    </a>
+
+
+                    <!-- Register -->
+
+                    <a
+                        href="{{ url_for('auth.register') }}"
+                        class="nav-btn register-btn"
+                    >
+                        Register
+                    </a>
+
+
+                {% endif %}
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         FLASH MESSAGES
+    ========================= -->
+
+    <div class="flash-container">
+
+        {% with messages = get_flashed_messages() %}
+
+            {% if messages %}
+
+                {% for message in messages %}
+
+                    <div class="flash-message">
+                        {{ message }}
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+        {% endwith %}
+
+    </div>
+
+
+
+    <!-- =========================
+         PAGE CONTENT
+    ========================= -->
+
+    <main class="main-content">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+
+            <!-- Footer Brand -->
+
+            <div class="footer-brand">
+
+                <h3>
+                    TaskFlow
+                </h3>
+
+                <p>
+                    Manage your tasks easily and stay organized.
+                </p>
+
+            </div>
+
+
+            <!-- Footer Links -->
+
+            <div class="footer-links">
+
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+
+
+                {% if session.get("user_id") %}
+
+
+                    {% if session.get("user_role") == "admin" %}
+
+                        <a href="{{ url_for('admin.dashboard') }}">
+                            Dashboard
+                        </a>
+
+                        <a href="{{ url_for('admin.dashboard') }}">
+                            Admin Panel
+                        </a>
+
+                    {% else %}
+
+                        <a href="{{ url_for('user.dashboard') }}">
+                            Dashboard
+                        </a>
+
+                    {% endif %}
+
+
+                {% else %}
+
+                    <a href="{{ url_for('auth.login') }}">
+                        Login
+                    </a>
+
+                    <a href="{{ url_for('auth.register') }}">
+                        Register
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 TaskFlow. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+{% extends "base.html" %}
+
+{% block title %}
+TaskFlow - Manage Your Tasks
+{% endblock %}
+
+{% block head %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}"
+>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero-section">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <span class="hero-badge">
+                ✦ Simple • Organized • Productive
+            </span>
+
+            <h1>
+                Manage Your Tasks.
+                <span>Stay Organized.</span>
+            </h1>
+
+            <p>
+                TaskFlow helps you create, organize, and manage your
+                daily tasks in one simple and organized place.
+            </p>
+
+            <div class="hero-buttons">
+
+                {% if session.get("user_id") %}
+
+                    {% if session.get("user_role") == "admin" %}
+
+                        <a
+                            href="{{ url_for('admin.dashboard') }}"
+                            class="primary-btn"
+                        >
+                            Go to Admin Panel →
+                        </a>
+
+                    {% else %}
+
+                        <a
+                            href="{{ url_for('user.dashboard') }}"
+                            class="primary-btn"
+                        >
+                            Go to Dashboard →
+                        </a>
+
+                    {% endif %}
+
+                {% else %}
+
+                    <a
+                        href="{{ url_for('auth.register') }}"
+                        class="primary-btn"
+                    >
+                        Get Started →
+                    </a>
+
+                    <a
+                        href="{{ url_for('auth.login') }}"
+                        class="secondary-btn"
+                    >
+                        Login
+                    </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="card-header">
+                <div>
+                    <small>Today's Tasks</small>
+                    <h3>Task Overview</h3>
+                </div>
+
+                <span class="check-icon">✓</span>
+            </div>
+
+            <div class="task-item">
+                <div class="task-check">✓</div>
+
+                <div>
+                    <strong>Complete project</strong>
+                    <small>TaskFlow project</small>
+                </div>
+
+                <span class="completed">Done</span>
+            </div>
+
+            <div class="task-item">
+                <div class="task-check pending">○</div>
+
+                <div>
+                    <strong>Review tasks</strong>
+                    <small>Check today's progress</small>
+                </div>
+
+                <span class="pending-text">Pending</span>
+            </div>
+
+            <div class="task-item">
+                <div class="task-check pending">○</div>
+
+                <div>
+                    <strong>Plan tomorrow</strong>
+                    <small>Prepare upcoming tasks</small>
+                </div>
+
+                <span class="pending-text">Pending</span>
+            </div>
+
+            <div class="progress-section">
+
+                <div class="progress-info">
+                    <span>Today's Progress</span>
+                    <strong>65%</strong>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="features-section">
+
+    <div class="section-heading">
+
+        <span>WHY TASKFLOW?</span>
+
+        <h2>
+            Everything you need to stay organized
+        </h2>
+
+        <p>
+            Keep your tasks under control with simple and useful
+            task management features.
+        </p>
+
+    </div>
+
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ✓
+            </div>
+
+            <h3>Easy Task Management</h3>
+
+            <p>
+                Create, edit, update, and delete your tasks
+                easily from your dashboard.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ◈
+            </div>
+
+            <h3>Stay Organized</h3>
+
+            <p>
+                Manage task status, priorities, and due dates
+                in one organized place.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔒
+            </div>
+
+            <h3>Secure Accounts</h3>
+
+            <p>
+                User authentication and protected accounts
+                keep your TaskFlow experience secure.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

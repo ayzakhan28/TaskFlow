@@ -1,0 +1,240 @@
+{% extends "base.html" %}
+
+{% block title %}
+User Dashboard - TaskFlow
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/user-dashboard.css')}}">
+
+<div class="dashboard">
+
+    <!-- Welcome Section -->
+
+    <div class="welcome-box">
+
+        <h1>
+            Welcome, {{ session["user_name"] }}! 👋
+        </h1>
+
+        <p>
+            Manage your tasks easily with TaskFlow.
+        </p>
+
+    </div>
+
+
+    <!-- User Information -->
+
+    <div class="info-cards">
+
+        <div class="info-card">
+
+            <h3>User ID</h3>
+
+            <p>
+                #{{ session["user_id"] }}
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>Account Role</h3>
+
+            <p>
+                {{ session["user_role"]|capitalize }}
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Tasks Header -->
+
+    <div class="tasks-header">
+
+        <h2>
+            My Tasks
+        </h2>
+
+        <a
+            href="{{ url_for('task.create_task') }}"
+            class="create-btn"
+        >
+            + Create Task
+        </a>
+
+    </div>
+<form method="GET" class="search-form">
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Search your task..."
+        value="{{ search }}"
+    >
+
+    <select name="status">
+
+        <option value="">
+            All Status
+        </option>
+
+        <option
+            value="pending"
+            {% if status == "pending" %}selected{% endif %}
+        >
+            Pending
+        </option>
+
+        <option
+            value="in_progress"
+            {% if status == "in_progress" %}selected{% endif %}
+        >
+            In Progress
+        </option>
+
+        <option
+            value="completed"
+            {% if status == "completed" %}selected{% endif %}
+        >
+            Completed
+        </option>
+
+    </select>
+
+    <button type="submit">
+        Search
+    </button>
+
+</form>
+
+
+    <!-- Tasks -->
+
+    {% if tasks %}
+
+        <div class="tasks-container">
+
+            {% for task in tasks %}
+
+                <div class="task-card">
+
+                    <h3>
+                        {{ task.title }}
+                    </h3>
+
+
+                    <p class="task-description">
+                        {{ task.description }}
+                    </p>
+
+
+                    <div class="task-details">
+
+                        <span class="badge">
+                            Status: {{ task.status|replace("_", " ")|title }}
+                        </span>
+
+                        <span class="badge">
+                            Priority: {{ task.priority|title }}
+                        </span>
+
+                        <span class="badge">
+                            Due: {{ task.due_date }}
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="{{ url_for('task.edit_task', task_id=task.id) }}"
+                        class="edit-btn"
+                    >
+                        Edit Task
+                    </a>
+
+                    <a href="{{url_for('task.delete_task', task_id=task.id)}}"
+                    class="delete-btn"
+                    onclick="return confirm('Are you want to Delete this task ')"
+                    >
+                    Delete Task
+                     
+            </a>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-state">
+
+            <h3>
+                No Tasks Yet
+            </h3>
+
+            <p>
+                You haven't created any tasks yet.
+            </p>
+<br>
+            <a
+                href="{{ url_for('task.create_task') }}"
+                class="create-btn"
+            >
+                Create Your First Task
+            </a>
+
+        </div>
+
+    {% endif %}
+
+    
+
+
+    <!-- Pagination -->
+
+{% if tasks.has_prev or tasks.has_next %}
+
+    <div class="pagination">
+
+        {% if tasks.has_prev %}
+            <a href="{{ url_for('user.dashboard',
+                                page=tasks.prev_num,
+                                search=search,
+                                status=status) }}">
+                ← Previous
+            </a>
+        {% endif %}
+
+
+        <span>
+            Page {{ tasks.page }} of {{ tasks.pages }}
+        </span>
+
+
+        {% if tasks.has_next %}
+            <a href="{{ url_for('user.dashboard',
+                                page=tasks.next_num,
+                                search=search,
+                                status=status) }}">
+                Next →
+            </a>
+        {% endif %}
+
+    </div>
+
+{% endif %}
+
+
+
+</div>
+
+{% endblock %}
