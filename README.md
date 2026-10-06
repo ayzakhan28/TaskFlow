@@ -352,11 +352,11 @@ User
 
 ### User Dashboard
 
-![TaskFlow Dashboard](screenshots/user-dashboard.png)
+![TaskFlow User Dashboard](screenshots/user-dashboard.png)
 
 ### Admin Dashboard
 
-![Admin Dashboard](screenshots/admin-dashboard.png)
+![TaskFlow Admin Dashboard](screenshots/admin-dashboard.png)
 
 ## 🎯 Portfolio Description
 
