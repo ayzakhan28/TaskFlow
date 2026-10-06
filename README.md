@@ -344,19 +344,6 @@ User
 
 ---
 
-## 📸 Screenshots
-
-### Login
-
-![TaskFlow Login](screenshots/login.png)
-
-### User Dashboard
-
-![TaskFlow User Dashboard](screenshots/user-dashboard.png)
-
-### Admin Dashboard
-
-![TaskFlow Admin Dashboard](screenshots/admin-dashboard.png)
 
 ## 🎯 Portfolio Description
 
